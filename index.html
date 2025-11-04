@@ -60,6 +60,13 @@
     input:focus, textarea:focus { box-shadow: 0 0 0 4px var(--ring); border-color: var(--accent); }
     label { font-weight:600; }
   </style>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]'], ['$$','$$']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
   <header>
@@ -71,9 +78,9 @@
       </div>
       <nav>
         <a href="#services">Services</a>
-        <a href="#abstract">À propos</a>
+        <a href="#abstract">Abstract</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="#contact">Me contacter</a>
+        <!--<a class="btn" href="#contact">Me contacter</a>-->
       </nav>
     </div>
   </header>
@@ -91,20 +98,20 @@
       <div class="grid features" role="list">
         <article class="card" role="listitem">
           <h3>Service A</h3>
-          <p>Décrivez brièvement votre première offre ou compétence phare.</p>
+          <p>Liste:</p>
           <ul class="list">
-            <li>Avantage 1</li>
-            <li>Avantage 2</li>
-            <li>Avantage 3</li>
+            <li>Numéro 1</li>
+            <li>Numéro 2</li>
+            <li>Numéro 3</li>
           </ul>
         </article>
         <article class="card" role="listitem">
           <h3>Service B</h3>
-          <p>Une autre prestation ou un produit que vous souhaitez mettre en avant.</p>
+          <p>présentation</p>
         </article>
         <article class="card" role="listitem">
           <h3>Service C</h3>
-          <p>Expliquez en quoi cela aide vos clients et pourquoi vous.</p>
+          <p>aaaaaaaaaaaaaaaa</p>
         </article>
       </div>
     </section>
@@ -128,29 +135,31 @@
           releasing high-quality data products and catalogs to the community.</p>
         </div>
         <aside class="card side">
-          <h3> Observing description </h3>
-          JWST Proposal 3293 (Created: Tuesday, April 23, 2024 at 4:01:37 PM Eastern Standard Time) - Overview
+        <h3> Observing description </h3>
+        <p>
+          JWST Proposal 3293 (Created: Tuesday, April 23, 2024 at 4:01:37 PM Eastern Standard Time) — Overview
           We will obtain deep NIRCam imaging of the best Frontier Fields lensing cluster Abell S1063 in seven broadband filters and two medium-band
-          filters. The goal is to reach an absolute magnitude limit of M(UV)=-12 for galaxies at z>6. Using multiple independent lensing models, we simulate
+          filters. The goal is to reach an absolute magnitude limit of \( M_{\mathrm{UV}}=-12 \) for galaxies at \( z>6 \). Using multiple independent lensing models, we simulate
           the lensing power of AS1063 through our NIRCam pointing, with the corresponding uncertainties. Our modeling results in an observed depth of
-          30.6-31AB mag.
+          \( 30.6\text{–}31~\mathrm{AB\ mag} \).
           The compact morphology and the size of the high-magnification region fits well within one NIRCam module. Therefore, the center coordinates will
           be determined according to the position angle of the allocated observing window. AS 1063 has an excellent visibility window, especially regarding
           the Micrometeoroid Avoidance Zone.
-          We will obtain the deepest imaging in F090W (39h) and F115W (39h) to constrain the Lyman break of galaxies during the reionization epoch (z=6
-          9). We will combine dropout color-color selection techniques and photometric redshifts estimates with SED-fitting tools. To achieve the most
+          We will obtain the deepest imaging in F090W (39h) and F115W (39h) to constrain the Lyman break of galaxies during the reionization epoch \( z=6\text{–}9 \).
+          We will combine dropout color-color selection techniques and photometric redshifts estimates with SED-fitting tools. To achieve the most
           accurate estimate, we will also obtain longer wavelength imaging in the F150W/F277W pair (23h) and the F200W/F356W pair (19h). This
           combination of filters will be also essential for the selection of Dark Ages galaxies, whose Lyman break is shifted to F115W and F150W filters.
           While the F44W exposure will be simultaneous to F115W, we split the LW channel exposure corresponding to F090W into two exposures for the
           medium-band filters F410M (16h) and F480M (23h). By bracketing rest-frame optical emission lines, these medium-band filters dramatically
-          improve the constraints on redshift and physical properties of galaxies. We estimated their exposure times assuming a typical flux of 2e-19 erg s-1
-          cm-2 , which results in SNR=7.   We use the DEEP8 readout pattern for all exposures. The total science time is 120h, and the total charged time is
-          148h.
+          improve the constraints on redshift and physical properties of galaxies. We estimated their exposure times assuming a typical flux of
+          \( 2\times10^{-19}\ \mathrm{erg\,s^{-1}\,cm^{-2}} \), which results in \( \mathrm{SNR}=7 \). We use the DEEP8 readout pattern for all exposures. The total science time is 120h,
+          and the total charged time is 148h.
           We adopt a compact INTRAMODULEBOX dither pattern with 4 positions to cover the short wavelength intra-module gaps while maximizing the
           full-depth area. In addition, we use a subpixel dither with 4 positions to best sample the PSF. The higher spatial resolution that will be achieved will
           be important for the size measurements of faint galaxies.
-          <!--<p>Sur ordinateur, appuyez sur <span class="kbd">.</span> dans un dépôt GitHub pour ouvrir l’éditeur web et modifier ce fichier directement depuis le navigateur.</p>-->
-        </aside>
+        </p>
+        <!-- <p>Sur ordinateur, appuyez sur <span class="kbd">.</span>...</p> -->
+      </aside>
       </div>
     </section>
 
