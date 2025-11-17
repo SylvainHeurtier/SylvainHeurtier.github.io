@@ -214,6 +214,21 @@
         font-size: 0.9rem;
       }
     }
+
+    /* ----------- TITRE + PIs (nouveau CSS) ----------- */
+    .program-title {
+      font-size: 2.4rem;      /* plus grand */
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .pi-line {
+      font-size: 1.6rem;      /* plus grand */
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -242,7 +257,9 @@
         class="hero-logo"
       />
 
-      <p class="program-title">JWST GLIMPSE PROGRAM</p>
+      <p class="program-title">
+        <strong>JWST GLIMPSE PROGRAM</strong>
+      </p>
 
       <p class="pi-line">
         <strong>PIs Hakim ATEK and John CHISHOLM</strong>
@@ -267,14 +284,29 @@
     <section id="overview">
       <h2>Survey Overview</h2>
       <p>
-        GLIMPSE is a JWST program (replace this paragraph with your own content)
-        designed to obtain deep NIRCam imaging and NIRSpec spectroscopy in the
-        field of Abell S1063. Here you can describe the main science drivers,
-        observing strategy, and why this field is unique.
+        JWST Proposal 3293 (Created: Tuesday, April 23, 2024 at 4:01:37 PM Eastern Standard Time) — Overview
+        We will obtain deep NIRCam imaging of the best Frontier Fields lensing cluster Abell S1063 in seven broadband filters and two medium-band
+        filters. The goal is to reach an absolute magnitude limit of \( M_{\mathrm{UV}}=-12 \) for galaxies at \( z>6 \). Using multiple independent lensing models, we simulate
+        the lensing power of AS1063 through our NIRCam pointing, with the corresponding uncertainties. Our modeling results in an observed depth of
+        \( 30.6\text{–}31~\mathrm{AB\ mag} \).
+        The compact morphology and the size of the high-magnification region fits well within one NIRCam module. Therefore, the center coordinates will
+        be determined according to the position angle of the allocated observing window. AS 1063 has an excellent visibility window, especially regarding
+        the Micrometeoroid Avoidance Zone.
+        We will obtain the deepest imaging in F090W (39h) and F115W (39h) to constrain the Lyman break of galaxies during the reionization epoch \( z=6\text{–}9 \).
+        We will combine dropout color-color selection techniques and photometric redshifts estimates with SED-fitting tools. To achieve the most
+        accurate estimate, we will also obtain longer wavelength imaging in the F150W/F277W pair (23h) and the F200W/F356W pair (19h). This
+        combination of filters will be also essential for the selection of Dark Ages galaxies, whose Lyman break is shifted to F115W and F150W filters.
+        While the F44W exposure will be simultaneous to F115W, we split the LW channel exposure corresponding to F090W into two exposures for the
+        medium-band filters F410M (16h) and F480M (23h). By bracketing rest-frame optical emission lines, these medium-band filters dramatically
+        improve the constraints on redshift and physical properties of galaxies. We estimated their exposure times assuming a typical flux of
+        \( 2\times10^{-19}\ \mathrm{erg\,s^{-1}\,cm^{-2}} \), which results in \( \mathrm{SNR}=7 \). We use the DEEP8 readout pattern for all exposures. The total science time is 120h,
+        and the total charged time is 148h.
+        We adopt a compact INTRAMODULEBOX dither pattern with 4 positions to cover the short wavelength intra-module gaps while maximizing the
+        full-depth area. In addition, we use a subpixel dither with 4 positions to best sample the PSF. The higher spatial resolution that will be achieved will
+        be important for the size measurements of faint galaxies.
       </p>
       <p>
-        You can also add links to official STScI program pages, or internal
-        documentation here.
+        add links to official STScI program pages
       </p>
     </section>
 
@@ -390,10 +422,6 @@
       </p>
       <p>
         <strong>Email:</strong> glimpse-jwst &mdash; at &mdash; example.org
-      </p>
-      <p>
-        You can also link to an internal website, Slack workspace, or other
-        resources as needed.
       </p>
     </section>
 
