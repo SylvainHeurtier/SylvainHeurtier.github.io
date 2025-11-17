@@ -1,220 +1,183 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Mon Programme – Data Release</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GLIMPSE</title>
-  <meta name="description" content="Official GLIMPSE JWST program site featuring results, 
-        data releases, and insights into faint high-redshift galaxies revealed by strong 
-        gravitational lensing.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b1020;      /* fond sombre élégant */
-      --fg: #ebf1ff;      /* texte principal */
-      --muted: #b7c3ff;   /* texte secondaire */
-      --accent: #7c9bff;  /* boutons/accents */
-      --card: #111936;    /* panneaux */
-      --ring: rgba(124,155,255,.6);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% 10%, #1a2250 0%, transparent 60%),
-                  radial-gradient(1000px 700px at 90% 0%, #18224a 0%, transparent 60%),
-                  var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(11,16,32,.6); border-bottom: 1px solid rgba(255,255,255,.06); }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { font-weight: 800; letter-spacing: .3px; }
-    .nav a { margin-left: 16px; }
-    .btn { display: inline-block; background: var(--accent); color: #0b1020; font-weight: 700; padding: 10px 16px; border-radius: 12px; box-shadow: 0 8px 24px rgba(124,155,255,.25); }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(124,155,255,.35); }
-    .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
-    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 0 0 16px; }
-    .hero p { color: var(--muted); font-size: clamp(16px, 2.5vw, 20px); margin: 0 auto 28px; max-width: 720px; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
-    .card { grid-column: span 12; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.06); border-radius: 20px; padding: 24px; }
-    .card h3 { margin-top: 0; }
-    .features .card { min-height: 160px; }
-    @media (min-width: 800px) {
-      .features .card { grid-column: span 4; }
-      .cta .card { grid-column: span 8; }
-      .cta .side { grid-column: span 4; }
-    }
-    footer { margin-top: 64px; padding: 24px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
-    .badge { display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; background: rgba(124,155,255,.12); border:1px solid rgba(124,155,255,.25); color: var(--muted); font-weight:600; }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .9em; padding: 2px 6px; background: #0d1430; border: 1px solid rgba(255,255,255,.08); border-radius: 6px; }
-    .section { padding: 40px 0; }
-    .list { margin: 0; padding-left: 18px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-    /* Formulaire */
-    form { display:grid; gap:12px; }
-    input, textarea { width:100%; padding:12px 14px; border-radius: 12px; border:1px solid rgba(255,255,255,.08); background:#0e1734; color:var(--fg); outline:none; }
-    input:focus, textarea:focus { box-shadow: 0 0 0 4px var(--ring); border-color: var(--accent); }
-    label { font-weight:600; }
-  </style>
-<script>
-  window.MathJax = {
-    tex: { inlineMath: [['\\(','\\)'], ['$', '$']], displayMath: [['\\[','\\]'], ['$$','$$']] },
-    svg: { fontCache: 'global' }
-  };
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap nav" role="navigation" aria-label="Navigation principale">
-      <div class="brand">
-        <img src="Glimpse-JWST-Logo-Color-Light.png"
-              alt="Logo"
-              style="height:50px; vertical-align:middle; margin-right:8px;">
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#abstract">Abstract</a>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mon Programme</h1>
+      <p class="subtitle">
+        Data releases, catalogues, cartes et publications
+      </p>
+
+      <nav class="main-nav">
+        <a href="#overview">Aperçu</a>
+        <a href="#science">Science</a>
+        <a href="#data-releases">Data Releases</a>
+        <a href="#publications">Publications</a>
+        <a href="#team">Équipe</a>
         <a href="#contact">Contact</a>
-        <!--<a class="btn" href="#contact">Me contacter</a>-->
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero wrap">
-      <p>JWST's GLIMPSE: gravitational lensing & NIRCam imaging to probe early galaxy formation and sources of reionization</p>
-      <img src="JWST-Abell-S1063.jpg" alt="JWST Abell S1063" style="max-width:35%; height:auto; margin:24px 0; border-radius:12px;">
-      <a class="btn" href="#start">Start</a>
+  <main class="container">
+    <!-- APERÇU -->
+    <section id="overview" class="section">
+      <h2>Aperçu du programme</h2>
+      <p>
+        Décris ici ton programme : objectif scientifique, jeu de données,
+        observations utilisées, domaine spectral, etc.
+      </p>
+      <p>
+        Par exemple : “Ce projet fournit des catalogues photométriques, des
+        cartes et des produits dérivés pour l’étude de XYZ.”
+      </p>
     </section>
 
-    <section id="services" class="section wrap">
-      <h2>Services</h2>
-      <div class="grid features" role="list">
-        <article class="card" role="listitem">
-          <h3>Service A</h3>
-          <p>Liste:</p>
-          <ul class="list">
-            <li>Numéro 1</li>
-            <li>Numéro 2</li>
-            <li>Numéro 3</li>
+    <!-- SCIENCE -->
+    <section id="science" class="section">
+      <h2>Science</h2>
+      <div class="columns">
+        <div>
+          <h3>Objectifs principaux</h3>
+          <ul>
+            <li>Objectif 1 (ex : galaxies à grand redshift)</li>
+            <li>Objectif 2 (ex : fonction de masse stellaire)</li>
+            <li>Objectif 3 (ex : environnement / amas / champ profond)</li>
           </ul>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Service B</h3>
-          <p>bbbbbbbbbbbbbbbb</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Service C</h3>
-          <p>cccccccccccccccc</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="abstract" class="section wrap">
-      <div class="grid">
-        <div class="card cta">
-          <h2>Abstract</h2>
-          <p> Low-mass galaxies hold the key to the formation process of the first galaxies: the interplay between gas accretion which fuels star 
-            formation and the subsequent stellar feedback which inhibits further star formation is likely reflected in the prevalence of low-mass 
-            galaxies at early epochs, a few hundred million years after the Big Bang. We propose to combine the power of strong gravitational 
-            lensing with ultra-deep NIRCam imaging to achieve three main goals: (1) to measure the prevalence of faint galaxies at \( z>6 \) to 
-            establish, for the first time, key observational benchmarks for galaxy formation models, which have never been confronted to this 
-            uncharted territory; (2) strongly constrain the contribution of the faintest galaxies towards cosmic reionization; (3) probe the typical 
-            galaxy population during the Dark Ages, that remains out of reach of current programs. Despite heroic integration times, current deep 
-            JWST programs achieve at best the same intrinsic depth as the Hubble Frontier Fields (HFF, \(\sim 31\) mag). Here, we propose to extend 
-            this observational frontier into the JWST era by using the best HFF lensing cluster AS1063 to push down to \(30.6\text{–}31\) mag, which 
-            corresponds to an intrinsic depth of \(33\text{–}35\) mag. We will detect galaxies at \( z>6 \) more than a thousand times fainter than 
-            the Milky Way. Combined with increasingly powerful numerical simulations, this body of work will radically transform our understanding 
-            of galaxy formation and the epoch of reionization. This unprecedented dataset will showcase the full potential of JWST. In the spirit 
-            of the HFF and deep JWST programs, our team commits to rapidly releasing high-quality data products and catalogs to the community.
+        </div>
+        <div>
+          <h3>Données et méthodes</h3>
+          <p>
+            Résume ici ce qui est important pour comprendre comment tes
+            produits de données ont été construits (instruments, filtres,
+            profondeur, pipeline, etc.).
           </p>
         </div>
-        <aside class="card side">
-        <h3> Observing description </h3>
-        <p>
-          JWST Proposal 3293 (Created: Tuesday, April 23, 2024 at 4:01:37 PM Eastern Standard Time) — Overview
-          We will obtain deep NIRCam imaging of the best Frontier Fields lensing cluster Abell S1063 in seven broadband filters and two medium-band
-          filters. The goal is to reach an absolute magnitude limit of \( M_{\mathrm{UV}}=-12 \) for galaxies at \( z>6 \). Using multiple independent lensing models, we simulate
-          the lensing power of AS1063 through our NIRCam pointing, with the corresponding uncertainties. Our modeling results in an observed depth of
-          \( 30.6\text{–}31~\mathrm{AB\ mag} \).
-          The compact morphology and the size of the high-magnification region fits well within one NIRCam module. Therefore, the center coordinates will
-          be determined according to the position angle of the allocated observing window. AS 1063 has an excellent visibility window, especially regarding
-          the Micrometeoroid Avoidance Zone.
-          We will obtain the deepest imaging in F090W (39h) and F115W (39h) to constrain the Lyman break of galaxies during the reionization epoch \( z=6\text{–}9 \).
-          We will combine dropout color-color selection techniques and photometric redshifts estimates with SED-fitting tools. To achieve the most
-          accurate estimate, we will also obtain longer wavelength imaging in the F150W/F277W pair (23h) and the F200W/F356W pair (19h). This
-          combination of filters will be also essential for the selection of Dark Ages galaxies, whose Lyman break is shifted to F115W and F150W filters.
-          While the F44W exposure will be simultaneous to F115W, we split the LW channel exposure corresponding to F090W into two exposures for the
-          medium-band filters F410M (16h) and F480M (23h). By bracketing rest-frame optical emission lines, these medium-band filters dramatically
-          improve the constraints on redshift and physical properties of galaxies. We estimated their exposure times assuming a typical flux of
-          \( 2\times10^{-19}\ \mathrm{erg\,s^{-1}\,cm^{-2}} \), which results in \( \mathrm{SNR}=7 \). We use the DEEP8 readout pattern for all exposures. The total science time is 120h,
-          and the total charged time is 148h.
-          We adopt a compact INTRAMODULEBOX dither pattern with 4 positions to cover the short wavelength intra-module gaps while maximizing the
-          full-depth area. In addition, we use a subpixel dither with 4 positions to best sample the PSF. The higher spatial resolution that will be achieved will
-          be important for the size measurements of faint galaxies.
-        </p>
-        <!-- <p>Sur ordinateur, appuyez sur <span class="kbd">.</span>...</p> -->
-      </aside>
       </div>
     </section>
 
-    <section id="contact" class="section wrap">
-      <h2>Contact</h2>
-      <div class="grid">
-        <div class="card">
-          <form name="contact" onsubmit="event.preventDefault(); alert('Thank you! This form is an example. Set up an email service or use a third-party form provider.');">
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required>
+    <!-- DATA RELEASES -->
+    <section id="data-releases" class="section">
+      <h2>Data Releases</h2>
+      <p>
+        Liste ici les différentes releases, avec les liens vers les données,
+        les descriptions, et les articles à citer.
+      </p>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="einstein@exemple.com" required>
+      <!-- RELEASE 1 -->
+      <article class="release">
+        <h3>Data Release 1</h3>
+        <p class="release-meta">
+          Date : 2025-01-15 &mdash; Version : v1.0
+        </p>
+        <p>
+          Brève description de ce qui est inclus dans DR1
+          (catalogues photométriques, cartes, spectres, etc.).
+        </p>
+        <ul class="links">
+          <li>
+            <a href="URL_VERS_CATALOGUE" target="_blank" rel="noopener">
+              Catalogue principal (FITS/CSV)
+            </a>
+          </li>
+          <li>
+            <a href="URL_VERS_CARTES" target="_blank" rel="noopener">
+              Mosaïques / images / cartes
+            </a>
+          </li>
+          <li>
+            <a href="URL_VERS_DOCUMENTATION" target="_blank" rel="noopener">
+              Documentation / README
+            </a>
+          </li>
+        </ul>
+        <p class="citation">
+          À citer : Nom et al. 2025, Journal, doi:xxxx (ajoute ici ta
+          référence).
+        </p>
+      </article>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+      <!-- RELEASE 2 (exemple) -->
+      <article class="release">
+        <h3>Data Release 2</h3>
+        <p class="release-meta">
+          Date : à venir &mdash; Version : en préparation
+        </p>
+        <p>
+          Ajoute des informations sur les futures extensions du jeu de
+          données (nouvelles bandes, redshifts, modèles, etc.).
+        </p>
+      </article>
+    </section>
 
-            <button class="btn" type="submit">Envoyer</button>
-          </form>
-        </div>
-        <div class="card">
-          <h3>Links</h3>
-          <ul class="list">
-            <!--<li><a href="#">LinkedIn</a></li>-->
-            <li><a href="#">GitHub</a></li>
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+      <ol class="pub-list">
+        <li>
+          <strong>Nom A. et al. 2025</strong> –
+          Titre de l’article principal associé à ta data release.  
+          <a href="URL_ADS_OU_ARXIV" target="_blank" rel="noopener">
+            lien ADS/arXiv
+          </a>
+        </li>
+        <li>
+          <strong>Nom B. et al. 2025</strong> –
+          Titre d’un article utilisant les données.  
+          <a href="AUTRE_URL" target="_blank" rel="noopener">
+            lien
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ÉQUIPE -->
+    <section id="team" class="section">
+      <h2>Équipe</h2>
+      <div class="columns">
+        <div>
+          <h3>Responsables</h3>
+          <ul>
+            <li>PI : Ton Nom (Institution)</li>
+            <li>Co-PI : Autre Nom (Institution)</li>
           </ul>
         </div>
+        <div>
+          <h3>Collaborateurs</h3>
+          <p>
+            Mets ici une liste courte ou un lien vers une page contenant la
+            liste complète de l’équipe.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="start" class="section wrap">
-      <h2>Xxxxxxxxxxxxxxxxxxxxxxx</h2>
-      <ol>
-        <li>xxxxxxxxxxxxx <a href="#">GitHub</a></li>
-        <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-        <li>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-        <li>cccccccccccccccccccccccccccccccccccc</li>
-      </ol>
-      <p>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>
+        Pour toute question sur les données, merci de contacter :
+      </p>
+      <ul>
+        <li>Email : <a href="mailto:ton.email@exemple.com">ton.email@exemple.com</a></li>
+        <li>GitHub : <a href="https://github.com/ton-username" target="_blank" rel="noopener">ton-username</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">© <span id="y"></span> JWST's GLIMPSE — powered by GitHub Pages</div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Merci de citer les publications associées lorsque vous utilisez ces
+        données.
+      </p>
+    </div>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
