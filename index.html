@@ -1,183 +1,417 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mon Programme – Data Release</title>
+  <title>GLIMPSE JWST Program</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ----------- Reset simple ----------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #ffffff;
+      background: #000;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #ffd27f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ----------- Hero avec fond flouté ----------- */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Image de fond floutée */
+    .hero::before {
+      content: "";
+      position: fixed; /* pour rester en arrière-plan sur tout le scroll */
+      inset: 0;
+      background-image: url("JWST-Abell-S1063.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px) brightness(0.45);
+      transform: scale(1.05); /* évite les bords flous visibles */
+      z-index: -2;
+    }
+
+    /* Overlay sombre léger pour encore mieux lire */
+    .hero::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.05), transparent 45%),
+                  radial-gradient(circle at 80% 100%, rgba(255,255,255,0.05), transparent 45%);
+      z-index: -1;
+    }
+
+    /* ----------- Barre de navigation ----------- */
+
+    .nav {
+      width: 100%;
+      padding: 1.5rem 5vw 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #ffd27f;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ----------- Bloc logo + sous-titre ----------- */
+
+    .hero-center {
+      padding: 3rem 1.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      max-width: 600px;   /* logo assez gros */
+      width: 80vw;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero-subtitle strong {
+      font-weight: 600;
+    }
+
+    .hero-footer {
+      padding: 1rem 1.5rem 2rem;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* ----------- Contenu principal ----------- */
+
+    main {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      backdrop-filter: blur(6px);
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      max-width: 70rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 0.75rem 1.25rem;
+    }
+
+    /* ----------- Table style simple pour releases/publications ----------- */
+
+    .list-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .list-table th,
+    .list-table td {
+      padding: 0.4rem 0.3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      vertical-align: top;
+    }
+
+    .list-table th {
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    .list-table td:first-child {
+      white-space: nowrap;
+      width: 6rem;
+    }
+
+    /* ----------- Responsif ----------- */
+
+    @media (max-width: 700px) {
+      .hero-center {
+        padding-top: 2rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+      .nav {
+        font-size: 0.8rem;
+      }
+      .list-table {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Mon Programme</h1>
-      <p class="subtitle">
-        Data releases, catalogues, cartes et publications
-      </p>
 
-      <nav class="main-nav">
-        <a href="#overview">Aperçu</a>
-        <a href="#science">Science</a>
-        <a href="#data-releases">Data Releases</a>
-        <a href="#publications">Publications</a>
-        <a href="#team">Équipe</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <!-- PAGE DE GARDE -->
+  <header class="hero">
+
+    <!-- Navigation type UNCOVER -->
+    <nav class="nav">
+      <a href="#overview">Overview</a>
+      <a href="#science">Science</a>
+      <a href="#data-releases">Data Releases</a>
+      <a href="#publications">Publications</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a href="#news">News</a>
+    </nav>
+
+    <!-- Logo GLIMPSE bien visible -->
+    <div class="hero-center">
+      <!-- Logo blanc fourni : titre du programme -->
+      <img
+        src="Glimpse-JWST-Logo-Color-Light.png"
+        alt="GLIMPSE JWST Program"
+        class="hero-logo"
+      />
+
+      <p class="hero-subtitle">
+        <strong>GLIMPSE</strong> – Placeholder subtitle for the JWST GLIMPSE program.
+        Replace this text with a short description of the program
+        (PIs, main science goal, field, etc.).
+      </p>
+    </div>
+
+    <div class="hero-footer">
+      © GLIMPSE JWST Program.
+      Design inspired by the JWST UNCOVER project (HTML5 UP).
     </div>
   </header>
 
-  <main class="container">
-    <!-- APERÇU -->
-    <section id="overview" class="section">
-      <h2>Aperçu du programme</h2>
+  <!-- CONTENU PRINCIPAL -->
+  <main>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <h2>Survey Overview</h2>
       <p>
-        Décris ici ton programme : objectif scientifique, jeu de données,
-        observations utilisées, domaine spectral, etc.
+        GLIMPSE is a JWST program (replace this paragraph with your own content)
+        designed to obtain deep NIRCam imaging and NIRSpec spectroscopy in the
+        field of Abell S1063. Here you can describe the main science drivers,
+        observing strategy, and why this field is unique.
       </p>
       <p>
-        Par exemple : “Ce projet fournit des catalogues photométriques, des
-        cartes et des produits dérivés pour l’étude de XYZ.”
+        You can also add links to official STScI program pages, or internal
+        documentation here.
       </p>
     </section>
 
     <!-- SCIENCE -->
-    <section id="science" class="section">
+    <section id="science">
       <h2>Science</h2>
-      <div class="columns">
-        <div>
-          <h3>Objectifs principaux</h3>
-          <ul>
-            <li>Objectif 1 (ex : galaxies à grand redshift)</li>
-            <li>Objectif 2 (ex : fonction de masse stellaire)</li>
-            <li>Objectif 3 (ex : environnement / amas / champ profond)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Données et méthodes</h3>
-          <p>
-            Résume ici ce qui est important pour comprendre comment tes
-            produits de données ont été construits (instruments, filtres,
-            profondeur, pipeline, etc.).
-          </p>
-        </div>
-      </div>
+
+      <h3>First Galaxies</h3>
+      <p>
+        Briefly describe how GLIMPSE will probe the formation and evolution of
+        the earliest galaxies (redshift range, depths, filters, etc.).
+      </p>
+
+      <h3>Reionization</h3>
+      <p>
+        Explain how the GLIMPSE dataset will constrain the role of faint
+        galaxies and AGN in driving cosmic reionization.
+      </p>
+
+      <h3>Additional Science</h3>
+      <ul>
+        <li>Stellar mass function and low-mass galaxies.</li>
+        <li>Dust and obscured star formation at high redshift.</li>
+        <li>Galaxy structure and environment in the GLIMPSE field.</li>
+      </ul>
     </section>
 
     <!-- DATA RELEASES -->
-    <section id="data-releases" class="section">
+    <section id="data-releases">
       <h2>Data Releases</h2>
       <p>
-        Liste ici les différentes releases, avec les liens vers les données,
-        les descriptions, et les articles à citer.
+        Use this section to list public data releases, links to mosaics,
+        catalogs, lens models, etc. The structure ci-dessous imite celui
+        d’UNCOVER.
       </p>
 
-      <!-- RELEASE 1 -->
-      <article class="release">
-        <h3>Data Release 1</h3>
-        <p class="release-meta">
-          Date : 2025-01-15 &mdash; Version : v1.0
-        </p>
-        <p>
-          Brève description de ce qui est inclus dans DR1
-          (catalogues photométriques, cartes, spectres, etc.).
-        </p>
-        <ul class="links">
-          <li>
-            <a href="URL_VERS_CATALOGUE" target="_blank" rel="noopener">
-              Catalogue principal (FITS/CSV)
-            </a>
-          </li>
-          <li>
-            <a href="URL_VERS_CARTES" target="_blank" rel="noopener">
-              Mosaïques / images / cartes
-            </a>
-          </li>
-          <li>
-            <a href="URL_VERS_DOCUMENTATION" target="_blank" rel="noopener">
-              Documentation / README
-            </a>
-          </li>
-        </ul>
-        <p class="citation">
-          À citer : Nom et al. 2025, Journal, doi:xxxx (ajoute ici ta
-          référence).
-        </p>
-      </article>
+      <table class="list-table">
+        <tbody>
+          <tr>
+            <th colspan="2">Data Release 1</th>
+          </tr>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>
+              <strong>GLIMPSE NIRCam mosaics</strong><br />
+              Links to FITS mosaics, weight maps, segmentation maps, etc.
+            </td>
+          </tr>
 
-      <!-- RELEASE 2 (exemple) -->
-      <article class="release">
-        <h3>Data Release 2</h3>
-        <p class="release-meta">
-          Date : à venir &mdash; Version : en préparation
-        </p>
-        <p>
-          Ajoute des informations sur les futures extensions du jeu de
-          données (nouvelles bandes, redshifts, modèles, etc.).
-        </p>
-      </article>
+          <tr>
+            <th colspan="2">Data Release 2</th>
+          </tr>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>
+              <strong>Photometric catalogs</strong><br />
+              Description of catalogs, selection, depth, filter coverage, and
+              relevant paper to cite.
+            </td>
+          </tr>
+
+          <!-- Ajoute d'autres lignes/DR au besoin -->
+        </tbody>
+      </table>
     </section>
 
     <!-- PUBLICATIONS -->
-    <section id="publications" class="section">
+    <section id="publications">
       <h2>Publications</h2>
-      <ol class="pub-list">
+      <p>
+        List here the main papers associated with the GLIMPSE program. You can
+        link to ADS, arXiv or journal pages as in the UNCOVER site.
+      </p>
+
+      <ol>
         <li>
-          <strong>Nom A. et al. 2025</strong> –
-          Titre de l’article principal associé à ta data release.  
-          <a href="URL_ADS_OU_ARXIV" target="_blank" rel="noopener">
-            lien ADS/arXiv
-          </a>
+          <a href="#" target="_blank" rel="noopener">
+            GLIMPSE: Survey Overview and First Results
+          </a><br />
+          First Author, A., Co-Author, B., et al., 20XX, Journal, Volume, Page.
         </li>
         <li>
-          <strong>Nom B. et al. 2025</strong> –
-          Titre d’un article utilisant les données.  
-          <a href="AUTRE_URL" target="_blank" rel="noopener">
-            lien
-          </a>
+          <a href="#" target="_blank" rel="noopener">
+            GLIMPSE: High-redshift Galaxy Candidates in Abell S1063
+          </a><br />
+          Another Author, C., et al., 20XX, Journal, Volume, Page.
         </li>
       </ol>
     </section>
 
-    <!-- ÉQUIPE -->
-    <section id="team" class="section">
-      <h2>Équipe</h2>
-      <div class="columns">
-        <div>
-          <h3>Responsables</h3>
-          <ul>
-            <li>PI : Ton Nom (Institution)</li>
-            <li>Co-PI : Autre Nom (Institution)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Collaborateurs</h3>
-          <p>
-            Mets ici une liste courte ou un lien vers une page contenant la
-            liste complète de l’équipe.
-          </p>
-        </div>
-      </div>
+    <!-- TEAM -->
+    <section id="team">
+      <h2>Team</h2>
+      <p>
+        Brief paragraph about the GLIMPSE collaboration, institutions involved,
+        and how the team is organized.
+      </p>
+
+      <ul>
+        <li>PI Name (Institution)</li>
+        <li>Co-PI Name (Institution)</li>
+        <li>Collaborator A (Institution)</li>
+        <li>Collaborator B (Institution)</li>
+        <!-- etc. -->
+      </ul>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact">
       <h2>Contact</h2>
       <p>
-        Pour toute question sur les données, merci de contacter :
+        For questions about the GLIMPSE program or data products, please contact:
       </p>
+      <p>
+        <strong>Email:</strong> glimpse-jwst &mdash; at &mdash; example.org
+      </p>
+      <p>
+        You can also link to an internal website, Slack workspace, or other
+        resources as needed.
+      </p>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <h2>News</h2>
+      <p>
+        Announce news items here: new data releases, major papers, press
+        releases, conferences, etc.
+      </p>
+
       <ul>
-        <li>Email : <a href="mailto:ton.email@exemple.com">ton.email@exemple.com</a></li>
-        <li>GitHub : <a href="https://github.com/ton-username" target="_blank" rel="noopener">ton-username</a></li>
+        <li>
+          <strong>[YYYY-MM-DD] GLIMPSE Data Release 1</strong> &mdash;
+          Short description of what is included.
+        </li>
+        <li>
+          <strong>[YYYY-MM-DD] First GLIMPSE paper accepted</strong> &mdash;
+          Provide link to arXiv/ADS.
+        </li>
       </ul>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>
-        Merci de citer les publications associées lorsque vous utilisez ces
-        données.
-      </p>
-    </div>
-  </footer>
 </body>
 </html>
