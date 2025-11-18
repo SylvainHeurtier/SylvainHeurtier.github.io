@@ -225,7 +225,8 @@ ul {
     font-size: 1.7rem;
   }
   .nav {
-    font-size: 0.8rem;
+    font-size: 1.15rem;
+    font-weight: 500;
   }
   .list-table {
     font-size: 0.9rem;
@@ -233,4 +234,22 @@ ul {
   .page-title {
     font-size: 2rem;
   }
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #ddd;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 2rem;
+}
+
+.hero-separator {
+  width: 60%;
+  max-width: 450px;
+  height: 2px;
+  background: rgba(255,255,255,0.8);
+  margin: 1rem auto;
+  border-radius: 5px;
 }
