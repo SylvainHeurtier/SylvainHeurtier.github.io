@@ -67,7 +67,7 @@ a:hover {
   gap: 1.5rem;
   flex-wrap: wrap;
   font-size: 1.35rem;   /* Police plus grande */
-  font-weight: 600;     /* Un peu plus épais */
+  font-weight: 500;     /* Un peu plus épais */
   text-transform: uppercase;
   letter-spacing: 0.1em; /* un peu plus aéré */
 }
@@ -108,6 +108,12 @@ a:hover {
   padding: 3rem 1.5rem 3rem;
   max-width: 900px;
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /*  centre verticalement tout l'intérieur */
+  align-items: center;       /*  centre horizontalement aussi */
+  gap: 1rem;                 /* espace uniforme entre les éléments */
 }
 
 .hero-logo {
