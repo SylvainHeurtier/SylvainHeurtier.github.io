@@ -67,7 +67,7 @@ a:hover {
   gap: 1.5rem;
   flex-wrap: wrap;
   font-size: 1.15rem;
-  font-weight: 400;      /* 400 ← plus fin, plus élégant */
+  font-weight: 350;      /* 350 ← plus fin, plus élégant */
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
