@@ -66,10 +66,10 @@ a:hover {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 1.15rem;   /* Police plus grande */
-  font-weight: 500;     /* Un peu plus épais */
+  font-size: 1.35rem;   /* Police plus grande */
+  font-weight: 600;     /* Un peu plus épais */
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em; /* un peu plus aéré */
 }
 
 .nav a {
@@ -95,12 +95,11 @@ a:hover {
 /* ----------- Séparateur horizontal ----------- */
 
 .hero-separator {
-  width: 60%;
-  max-width: 450px;
+  width: 70%;                  /* visuellement mieux */
+  max-width: 520px;
   height: 2px;
-  background: rgba(255,255,255,0.85);
-  margin: 1.3rem auto;
-  border-radius: 4px;
+  background: rgba(255,255,255,0.9);
+  margin: 1.6rem auto;
 }
 
 /* ----------- Bloc logo / titres (index only) ----------- */
@@ -119,22 +118,24 @@ a:hover {
 }
 
 .program-title {
-  font-size: 2.0rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.4rem;
+  font-size: 2.4rem;     /* ↑ plus impactant */
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  margin-bottom: 0.6rem;
   text-transform: uppercase;
 }
 
 .pi-line {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 1.1rem;
+  font-size: 1.7rem;     /* ↑ plus visible */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1.25rem;    /* ↑ lisible même sur grand écran */
+  opacity: 0.95;
+  max-width: 60rem;
+  margin: 0 auto 1.4rem;
 }
 
 .hero-subtitle strong {
