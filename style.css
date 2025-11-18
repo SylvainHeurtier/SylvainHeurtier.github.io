@@ -66,7 +66,8 @@ a:hover {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 0.95rem;
+  font-size: 1.15rem;   /* Police plus grande */
+  font-weight: 500;     /* Un peu plus épais */
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -91,7 +92,18 @@ a:hover {
   width: 100%;
 }
 
-/* ----------- Bloc logo / titres ----------- */
+/* ----------- Séparateur horizontal ----------- */
+
+.hero-separator {
+  width: 60%;
+  max-width: 450px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  margin: 1.3rem auto;
+  border-radius: 4px;
+}
+
+/* ----------- Bloc logo / titres (index only) ----------- */
 
 .hero-center {
   padding: 3rem 1.5rem 3rem;
@@ -106,6 +118,20 @@ a:hover {
   display: block;
 }
 
+.program-title {
+  font-size: 2.0rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.pi-line {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+}
+
 .hero-subtitle {
   font-size: 1.1rem;
   opacity: 0.9;
@@ -115,35 +141,25 @@ a:hover {
   font-weight: 600;
 }
 
-.hero-footer {
-  padding: 1rem 1.5rem 2rem;
+/* ----------- Footer ----------- */
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #ddd;
   font-size: 0.9rem;
   opacity: 0.85;
+  margin-top: 2rem;
 }
 
-/* Titre du programme sur la page d'accueil */
-.program-title {
-  font-size: 2.0rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-}
+/* ----------- Page title (pages internes) ----------- */
 
-/* Ligne PIs */
-.pi-line {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 1.1rem;
-}
-
-/* Titre de page sur les pages internes */
 .page-title {
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 }
 
 /* ----------- Contenu principal ----------- */
@@ -215,41 +231,23 @@ ul {
   width: 6rem;
 }
 
-/* ----------- Responsif ----------- */
+/* ----------- Responsive ----------- */
 
 @media (max-width: 700px) {
+
   .hero-center {
     padding-top: 2rem;
   }
+
   h2 {
     font-size: 1.7rem;
   }
-  .nav {
-    font-size: 1.15rem;
-    font-weight: 500;
-  }
+
   .list-table {
     font-size: 0.9rem;
   }
+
   .page-title {
     font-size: 2rem;
   }
-}
-
-.site-footer {
-  text-align: center;
-  padding: 1.5rem 0;
-  color: #ddd;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-top: 2rem;
-}
-
-.hero-separator {
-  width: 60%;
-  max-width: 450px;
-  height: 2px;
-  background: rgba(255,255,255,0.8);
-  margin: 1rem auto;
-  border-radius: 5px;
 }
