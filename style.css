@@ -66,10 +66,10 @@ a:hover {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 1.05rem;   /* plus petit qu'avant */
-  font-weight: 500;
+  font-size: 1.25rem;   /* Police plus grande */
+  font-weight: 500;     /* Un peu plus épais */
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em; /* un peu plus aéré */
 }
 
 .nav a {
@@ -92,28 +92,27 @@ a:hover {
   width: 100%;
 }
 
-/* ----------- Séparateur horizontal + animation ----------- */
+/* ----------- Séparateur horizontal ----------- */
 
 .hero-separator {
   width: 70%;
   max-width: 520px;
   height: 2px;
   background: rgba(255,255,255,0.9);
-  margin: 1.3rem auto;
+  margin: 1.6rem auto;
   border-radius: 4px;
+
   opacity: 0;
 }
 
 /* barre du haut : part du centre et monte un peu */
 .hero-separator-top {
   animation: sepMoveUp 0.7s ease-out forwards;
-  animation-delay: 0.1s;
 }
 
 /* barre du bas : part du centre et descend un peu */
 .hero-separator-bottom {
   animation: sepMoveDown 0.7s ease-out forwards;
-  animation-delay: 0.1s;
 }
 
 @keyframes sepMoveUp {
@@ -138,6 +137,7 @@ a:hover {
   }
 }
 
+
 /* ----------- Bloc logo / titres (index only) ----------- */
 
 .hero-center {
@@ -152,6 +152,7 @@ a:hover {
   gap: 1rem;
 }
 
+
 .hero-logo {
   max-width: 600px;
   width: 80vw;
@@ -159,53 +160,29 @@ a:hover {
   display: block;
 }
 
-/* Animation du texte entre les barres */
-.program-title,
-.pi-line,
-.hero-subtitle {
-  opacity: 0;
-  transform: translateY(8px);
-  animation: fadeInText 0.6s ease-out forwards;
-}
-
-/* décalage pour un effet en chaîne */
 .program-title {
-  font-size: 2.0rem;     /* un peu réduit */
+  font-size: 2.4rem;     /* ↑ plus impactant */
   font-weight: 700;
   letter-spacing: 0.10em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   text-transform: uppercase;
-  animation-delay: 0.4s;
 }
 
 .pi-line {
-  font-size: 1.4rem;     /* un peu réduit */
+  font-size: 1.7rem;     /* ↑ plus visible */
   font-weight: 600;
-  margin-bottom: 1.2rem;
-  animation-delay: 0.55s;
+  margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;     /* un peu réduit */
+  font-size: 1.25rem;    /* ↑ lisible même sur grand écran */
   opacity: 0.95;
   max-width: 60rem;
-  margin: 0 auto 1.2rem;
-  animation-delay: 0.7s;
+  margin: 0 auto 1.4rem;
 }
 
 .hero-subtitle strong {
   font-weight: 600;
-}
-
-@keyframes fadeInText {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ----------- Footer ----------- */
@@ -222,7 +199,7 @@ a:hover {
 /* ----------- Page title (pages internes) ----------- */
 
 .page-title {
-  font-size: 2.1rem;         /* légèrement réduit */
+  font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -249,14 +226,14 @@ section:last-of-type {
 }
 
 h2 {
-  font-size: 1.8rem;          /* un peu réduit */
+  font-size: 2rem;
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
   font-weight: 600;
@@ -307,7 +284,7 @@ ul {
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .list-table {
@@ -315,22 +292,58 @@ ul {
   }
 
   .page-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
+}
 
-  .nav {
-    font-size: 0.95rem;  /* un peu plus petit sur mobile */
+/* Titre du programme */
+.program-title {
+  font-size: 2.0rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInText 0.6s ease-out forwards;
+  animation-delay: 0.3s;   /* apparition 1 */
+}
+
+/* Ligne des PIs */
+.pi-line {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInText 0.6s ease-out forwards;
+  animation-delay: 0.55s;  /* apparition 2 */
+}
+
+/* Sous-titre */
+.hero-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 60rem;
+  margin: 0 auto 1.2rem;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInText 0.6s ease-out forwards;
+  animation-delay: 0.8s;   /* apparition 3 */
+}
+
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
-
-  .program-title {
-    font-size: 1.7rem;
-  }
-
-  .pi-line {
-    font-size: 1.25rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
