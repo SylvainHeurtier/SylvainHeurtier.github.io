@@ -95,12 +95,48 @@ a:hover {
 /* ----------- Séparateur horizontal ----------- */
 
 .hero-separator {
-  width: 70%;                  /* visuellement mieux */
+  width: 70%;
   max-width: 520px;
   height: 2px;
   background: rgba(255,255,255,0.9);
   margin: 1.6rem auto;
+  border-radius: 4px;
+
+  opacity: 0;
 }
+
+/* barre du haut : part du centre et monte un peu */
+.hero-separator-top {
+  animation: sepMoveUp 0.7s ease-out forwards;
+}
+
+/* barre du bas : part du centre et descend un peu */
+.hero-separator-bottom {
+  animation: sepMoveDown 0.7s ease-out forwards;
+}
+
+@keyframes sepMoveUp {
+  from {
+    transform: translateY(1.2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sepMoveDown {
+  from {
+    transform: translateY(-1.2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 /* ----------- Bloc logo / titres (index only) ----------- */
 
@@ -111,10 +147,11 @@ a:hover {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;   /*  centre verticalement tout l'intérieur */
-  align-items: center;       /*  centre horizontalement aussi */
-  gap: 1rem;                 /* espace uniforme entre les éléments */
+  justify-content: center;   /* centre verticalement le contenu */
+  align-items: center;       /* centre horizontalement */
+  gap: 1rem;
 }
+
 
 .hero-logo {
   max-width: 600px;
@@ -256,5 +293,37 @@ ul {
 
   .page-title {
     font-size: 2rem;
+  }
+}
+
+.program-title,
+.pi-line,
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInText 0.6s ease-out forwards;
+}
+
+/* décalage pour un effet en chaîne */
+.program-title {
+  animation-delay: 0.4s;
+}
+
+.pi-line {
+  animation-delay: 0.55s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
