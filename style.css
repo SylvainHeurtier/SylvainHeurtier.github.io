@@ -332,3 +332,8 @@ ul {
     font-size: 1.9rem;
   }
 }
+
+.program-title strong,
+.pi-line strong {
+  font-weight: inherit;
+}
