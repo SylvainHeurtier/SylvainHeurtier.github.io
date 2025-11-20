@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #ffffff;
   background: #000;
   line-height: 1.6;
@@ -67,7 +67,7 @@ a:hover {
   gap: 1.5rem;
   flex-wrap: wrap;
   font-size: 1.15rem;
-  font-weight: 350;      /* 350 ← plus fin, plus élégant */
+  font-weight: 350;      /* 400 ← plus fin, plus élégant */
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -162,8 +162,8 @@ a:hover {
 /* 1. Titre du programme */
 .program-title {
   font-size: 2.0rem;
-  font-weight: 600;       /* ← au lieu de 700 (beaucoup plus moderne) */
-  letter-spacing: 0.08em; /* ← un peu moins écarté */
+  font-weight: 700;
+  letter-spacing: 0.10em;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 
@@ -175,8 +175,8 @@ a:hover {
 
 /* 2. Ligne des PIs */
 .pi-line {
-  font-size: 1.35rem;
-  font-weight: 400;      /* ← plus fin, lisible et élégant */
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 1.2rem;
 
   opacity: 0;
@@ -187,9 +187,8 @@ a:hover {
 
 /* 3. Sous-titre */
 .hero-subtitle {
-  font-size: 1.05rem;
-  font-weight: 300;      /* ← ultra propre, comme UNCOVER */
-  opacity: 0.9;
+  font-size: 1.1rem;
+  opacity: 0.95;
   max-width: 60rem;
   margin: 0 auto 1.2rem;
 
@@ -331,9 +330,4 @@ ul {
   .page-title {
     font-size: 1.9rem;
   }
-}
-
-.program-title strong,
-.pi-line strong {
-  font-weight: inherit;
 }
